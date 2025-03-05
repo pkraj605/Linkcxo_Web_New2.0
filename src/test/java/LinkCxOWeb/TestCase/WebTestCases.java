@@ -28,6 +28,8 @@ public class WebTestCases extends TestBaseClassWeb {
 //		 super();
 //		 this.driver = driver;
 		driver = TestBaseClassWeb.driver;
+		
+		
 	}
 
 	TestUtilsWeb testutilsWeb;
