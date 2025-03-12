@@ -67,38 +67,3 @@ public class TestBaseClassWeb {
 		driver.manage().timeouts().implicitlyWait(testutilsweb.implicitywait, TimeUnit.SECONDS);
 	}
 }
-//	public static void initializeBrowserEdge() throws IOException {
-//	    System.out.println("Before constructing web");
-//	    TestBaseClassWeb web = new TestBaseClassWeb();
-//	    web = new TestBaseClassWeb(); // Assuming this is necessary
-//	    System.out.println("After constructing web");
-//	    TestUtilsWeb testutilsweb=new TestUtilsWeb(driver);
-//	    String browserName1 = prop.getProperty("BROWSER1");
-//
-//	    if (browserName1.equalsIgnoreCase("Edge")) {
-//	        WebDriverManager.edgedriver().setup();
-//	        EdgeOptions options = new EdgeOptions();
-//	        // Set any options if needed
-//	        // options.setCapability("key", "value");
-//
-//	        try {
-//	            driver = new EdgeDriver(options);
-//	            System.out.println("Edge browser initialized successfully");
-//	        } catch (Exception e) {
-//	            System.err.println("Error initializing Edge browser: " + e.getMessage());
-//	        }
-//	    }
-//		driver.get(prop.getProperty("URL"));
-//		driver.manage().window().maximize();
-//		driver.manage().deleteAllCookies();
-//		driver.manage().timeouts().pageLoadTimeout(testutilsweb.pageloadtime,TimeUnit.SECONDS);
-//		driver.manage().timeouts().implicitlyWait(testutilsweb.implicitywait,TimeUnit.SECONDS);	
-//	}
-
-//WebDriverWait wait=new WebDriverWait(driver, 10);
-//String windowSize = prop.getProperty("WindowSize");
-//String[] dimensions = windowSize.split("x");
-//int width = Integer.parseInt(dimensions[0]);
-//int height = Integer.parseInt(dimensions[1]);
-//Dimension dimension = new Dimension(width,height);
-//driver.manage().window().setSize(dimension);

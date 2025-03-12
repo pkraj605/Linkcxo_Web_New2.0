@@ -74,8 +74,7 @@ public class WebLoginWithMobileNumber extends TestBaseClassWeb {
 		action.sendKeysElement(Enterotp5, "4");
 		Thread.sleep(1000);
 		action.sendKeysElement(Enterotp6, "4");
-		Thread.sleep(1000);
-		
+		Thread.sleep(1000);	
 	
 	}
 
@@ -85,4 +84,4 @@ public class WebLoginWithMobileNumber extends TestBaseClassWeb {
 	public boolean verifyUserIsAbletoLogin() {
 		return action.isDisplay(verifylogin);
 	}
-	}
+}

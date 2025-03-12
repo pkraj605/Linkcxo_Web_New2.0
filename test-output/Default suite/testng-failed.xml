@@ -5,8 +5,8 @@
     <classes>
       <class name="LinkCxOWeb.TestCase.WebTestCases">
         <methods>
+          <include name="CreatePost"/>
           <include name="teardown"/>
-          <include name="loginviaMobileNumber"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- LinkCxOWeb.TestCase.WebTestCases -->

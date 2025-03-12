@@ -103,7 +103,7 @@ public class TestUtilsWeb extends TestBaseClassWeb {
 	}
 
 	public void testCaseCreate(String tc) {
-		test = extent.createTest("<font color=\"BlueViolet\"><b>" + tc + "</b></font> ").assignCategory("MAYUR");
+		test = extent.createTest("<font color=\"BlueViolet\"><b>" + tc + "</b></font> ").assignCategory("PRABHAT");
 	}
 
 	public void passTestCase(String passDesc) throws IOException {

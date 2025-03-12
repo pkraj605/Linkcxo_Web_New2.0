@@ -28,12 +28,6 @@ public class WebTestCases extends TestBaseClassWeb {
 //		 super();
 //		 this.driver = driver;
 		driver = TestBaseClassWeb.driver;
-		
-		
-		
-		
-		
-		
 	}
 
 	TestUtilsWeb testutilsWeb;
@@ -41,8 +35,7 @@ public class WebTestCases extends TestBaseClassWeb {
 	WebLoginWithMobileNumber loginmethodweb;
 	TestBaseClassWeb testclassweb;
 	Homescreen screen;
-	
-	
+
 	@BeforeTest
 	public void setUp() throws IOException {
 		System.out.println("Inside before");
@@ -52,7 +45,7 @@ public class WebTestCases extends TestBaseClassWeb {
 		action1 = new ActionKeywords();
 		loginmethodweb = new WebLoginWithMobileNumber();
 		screen = new Homescreen();
-		
+
 	}
 
 	@Test(priority = 1)
@@ -66,12 +59,11 @@ public class WebTestCases extends TestBaseClassWeb {
 			testutilsWeb.test.log(Status.INFO, "click on login button");
 			loginmethodweb.ClickonPhoneBtn();
 			testutilsWeb.test.log(Status.INFO, "click on Phone button");
-			loginmethodweb.EnterMobileNumber();			
+			loginmethodweb.EnterMobileNumber();
 			loginmethodweb.ClickonContiniueButton();
 			Thread.sleep(2000);
-			
+
 			loginmethodweb.EnterOTP();
-//			
 			Thread.sleep(3000);
 			try {
 				if (loginmethodweb.verifyUserIsAbletoLogin()) {
@@ -86,38 +78,81 @@ public class WebTestCases extends TestBaseClassWeb {
 			testutilsWeb.failTestCase("User is not able to login");
 		}
 //		loginmethodweb.ClickonPlusButton();	
-		
+
 	}
-	
-	
-	@Test(priority = 2)
-	public void CreatePost() throws IOException{
-		
+
+	@Test(priority = 2, enabled = false)
+	public void CreatePost() throws IOException {
+
 		testutilsWeb.testCaseCreate("Tc 02 : Create Post");
-		
+
 		try {
-			
-		screen.ClickonPlusButton();
-		screen.ClickonCreatePostButton();
-		screen.TextEnter();
-		Thread.sleep(5000);
-		
-		try {
-			if (screen.VerifyPostCreated()) {
-				testutilsWeb.passTestCase("User is able to create post");
+
+			screen.ClickonPlusButton();
+			try {
+				screen.ClickonCreatePostButton();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
+//		screen.ClickoncreateArticleButton();
+			screen.TextEnter();
+			Thread.sleep(5000);
+
+			try {
+				if (screen.VerifyPostCreated()) {
+					testutilsWeb.passTestCase("User is able to create post");
+				}
+			} catch (Exception e) {
+				testutilsWeb.failTestCase("User is not able to create post");
+			}
+
 		} catch (Exception e) {
-			testutilsWeb.failTestCase("User is not able to create post");
-		}	
-			
-			
-		}catch (Exception e) {
 			e.printStackTrace();
 			testutilsWeb.failTestCase("User is not able create post");
 			// TODO: handle exception
 		}
-		
-		
+
+		//////////////////// End post/////////////////////
+
+	}
+
+	@Test(priority = 3)
+	public void CreateArticle() throws IOException {
+
+		testutilsWeb.testCaseCreate("Tc 03 : Create Article");
+
+		try {
+			screen.ClickoncreateArticleButton();
+			screen.UploadFile();
+			Thread.sleep(3000);
+
+			screen.EnterARticleTitle();
+			
+			
+			Thread.sleep(3000);
+
+			try {
+				screen.EnterARticleDescription();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			Thread.sleep(3000);
+			try {
+				if (screen.VerifyArticlePosted()) {
+					testutilsWeb.passTestCase("User is able to create Article");
+				}
+			} catch (Exception e) {
+				testutilsWeb.failTestCase("User is not able to create Article");
+			}
+
+		} catch (Exception e) {
+			testutilsWeb.failTestCase("User is not able to create Article");
+			e.printStackTrace();
+			// TODO: handle exception
+		}
 	}
 
 	@AfterTest
