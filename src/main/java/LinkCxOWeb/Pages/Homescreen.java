@@ -47,7 +47,12 @@ public class Homescreen extends TestBaseClassWeb {
 	
 	public boolean VerifyPostCreated() {
 		return action.isDisplay(verifyPost);
-	}	
+	}
+	
+	
+	//---------------Article Start-------------------------------------//
+	
+	
 	@FindBy(xpath = "//h1[.='Compose an Article']")
 	private WebElement createArticleButton;
 	
@@ -88,7 +93,95 @@ public class Homescreen extends TestBaseClassWeb {
 	{
 		return action.isDisplay(VerifyArticle);
 	}
+
+	//////////-------------------Poll Start-------------------///////	
 	
 	
+	@FindBy(xpath = "//h1[.='Create a Poll']")
+	private WebElement createPollButton;
 	
+	public void ClickOnCreatePollButton() throws InterruptedException {
+		
+		action.clickElement(ClickPlusBtn);	
+		Thread.sleep(3000);
+		action.clickElement(createPollButton);
+		Thread.sleep(3000);
+		}
+	@FindBy(xpath= "//textarea[@id='question']")
+	private WebElement pollQuestion;
+	public void EnterPollQuestion()
+	{
+		action.sendKeysElement(pollQuestion, "What is your favorite color");
+	}
+	
+	@FindBy(xpath = "//label[contains(text(),'Categ')]/following::div[1]")
+	private WebElement CategoryDrop;
+	
+	@FindBy(xpath = "//div[text()='Business Growth']")
+	private WebElement CategorySelect;
+	public void SElectCategory() throws InterruptedException
+	{
+		action.clickElement(CategoryDrop);
+		Thread.sleep(1000);
+		ActionKeywords.clickElement(CategorySelect);	
+	}
+	
+	@FindBy(xpath= "//input[@placeholder='Option 1 *']")  
+	private WebElement optionOne;
+	public void EnterOptionOne()
+	{
+		action.sendKeysElement(optionOne, "Red");
+	}
+	
+	@FindBy(xpath = "//input[@placeholder='Option 2 *']")
+	private WebElement optionTwo;
+	public void EnterOptionTwo() 
+	{
+		action.sendKeysElement(optionTwo, "black");
+	}
+	
+	@FindBy(xpath = "(//button[text()='Save'])[2]")
+	private WebElement FinalSubmit;
+	public void ClickOnSubmit()
+	{
+		action.clearElement(FinalSubmit);
+	}
+	
+	///////////------------------Query Start-----------------------///////////	
+	
+	
+	@FindBy(xpath = "//h1[.='Post as a Query']")
+	private WebElement createQueryButton;
+	public void ClickOnCreateQueryOption() throws InterruptedException {
+		
+		action.clickElement(ClickPlusBtn);	
+		Thread.sleep(3000);
+		action.clickElement(createQueryButton);
+		Thread.sleep(3000);
+		}
+	
+	
+	@FindBy(xpath= "//input[@id='question']")
+	private WebElement QueryQuestion;
+	public void EnterQueryQuestion()
+	{
+	action.sendKeysElement(QueryQuestion, "what is your Name");
+	}
+	
+	@FindBy(xpath = "//textarea[@id ='discription']")
+	private WebElement Querydescription;
+	public void EnterQueryDescription()
+	{
+	  action.sendKeysElement(Querydescription, "Entering Query description");
+	}
+	
+	@FindBy(xpath = "(//button[text()='Save'])[2]")
+	private WebElement SaveButton;
+	public void ClickOnQueryPostBtn()
+	{
+	  action.clickElement(SaveButton);
+	}
+		
+
 }
+	

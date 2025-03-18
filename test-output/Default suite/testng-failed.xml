@@ -5,7 +5,7 @@
     <classes>
       <class name="LinkCxOWeb.TestCase.WebTestCases">
         <methods>
-          <include name="CreatePost"/>
+          <include name="CreateQuery"/>
           <include name="teardown"/>
           <include name="setUp"/>
         </methods>

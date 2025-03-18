@@ -25,8 +25,8 @@ public class WebTestCases extends TestBaseClassWeb {
 
 	@Override
 	public void TestBaseClassWeb() throws IOException {
-//		 super();
-//		 this.driver = driver;
+		// super();
+		// this.driver = driver;
 		driver = TestBaseClassWeb.driver;
 	}
 
@@ -40,7 +40,7 @@ public class WebTestCases extends TestBaseClassWeb {
 	public void setUp() throws IOException {
 		System.out.println("Inside before");
 		InitializeBrowser();
-//		initializeBrowserEdge();
+		// initializeBrowserEdge();
 		testutilsWeb = new TestUtilsWeb(driver);
 		action1 = new ActionKeywords();
 		loginmethodweb = new WebLoginWithMobileNumber();
@@ -52,7 +52,7 @@ public class WebTestCases extends TestBaseClassWeb {
 	public void loginviaMobileNumber() throws IOException {
 
 		testutilsWeb.extentReport();
-//		testutilsWeb.CreateHtmlTable(0, 0, 0);
+		// testutilsWeb.CreateHtmlTable(0, 0, 0);
 		testutilsWeb.testCaseCreate("Tc 01 : Login With Mobile Number");
 		try {
 			loginmethodweb.ClickonLoginButton();
@@ -77,7 +77,8 @@ public class WebTestCases extends TestBaseClassWeb {
 			e.printStackTrace();
 			testutilsWeb.failTestCase("User is not able to login");
 		}
-//		loginmethodweb.ClickonPlusButton();	
+		// loginmethodweb.ClickonPlusButton();
+		System.out.println("------nnnnnnn------");
 
 	}
 
@@ -95,7 +96,7 @@ public class WebTestCases extends TestBaseClassWeb {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-//		screen.ClickoncreateArticleButton();
+			// screen.ClickoncreateArticleButton();
 			screen.TextEnter();
 			Thread.sleep(5000);
 
@@ -117,19 +118,19 @@ public class WebTestCases extends TestBaseClassWeb {
 
 	}
 
-	@Test(priority = 3)
+	@Test(priority = 3, enabled = false)
 	public void CreateArticle() throws IOException {
 
 		testutilsWeb.testCaseCreate("Tc 03 : Create Article");
 
 		try {
 			screen.ClickoncreateArticleButton();
+			Thread.sleep(3000);
+
 			screen.UploadFile();
 			Thread.sleep(3000);
 
 			screen.EnterARticleTitle();
-			
-			
 			Thread.sleep(3000);
 
 			try {
@@ -152,13 +153,64 @@ public class WebTestCases extends TestBaseClassWeb {
 			testutilsWeb.failTestCase("User is not able to create Article");
 			e.printStackTrace();
 			// TODO: handle exception
+
 		}
+
+	}
+
+	@Test(priority = 4, enabled = false)
+	public void CreatePoll() throws IOException {
+
+		testutilsWeb.testCaseCreate("Tc 04 : Create Poll");
+
+		try {
+			screen.ClickOnCreatePollButton();
+			Thread.sleep(3000);
+			screen.EnterPollQuestion();
+			screen.SElectCategory();
+			screen.EnterOptionOne();
+			screen.EnterOptionTwo();
+			screen.ClickOnSubmit();
+			Thread.sleep(3000);
+
+		} catch (Exception e) {
+			testutilsWeb.failTestCase("User is not able to create Poll");
+			e.printStackTrace();
+			// TODO: handle exception
+		}
+
+	}
+
+	@Test(priority = 5)
+	public void CreateQuery() throws IOException {
+		System.out.println("------------");
+		testutilsWeb.testCaseCreate("Tc 05 : Create Query sucessfully");
+
+		try {
+			screen.ClickOnCreateQueryOption();
+			screen.SElectCategory();
+			screen.EnterQueryQuestion();
+			Thread.sleep(3000);
+			screen.EnterQueryDescription();
+			Thread.sleep(3000);
+			screen.ClickOnQueryPostBtn();
+			Thread.sleep(3000);
+			//screen.ClickOnSubmit();
+			//Thread.sleep(3000);
+
+		} catch (Exception e) {
+			testutilsWeb.failTestCase("User is not able to create Query");
+			e.printStackTrace();
+			// TODO: handle exception
+		}
+
 	}
 
 	@AfterTest
 	public void teardown() {
 		testutilsWeb.ExtentFlush();
-//			driver.quit();
+		driver.quit();
 		TestBaseClassWeb.driver.quit();
 	}
+
 }
