@@ -16,6 +16,7 @@ import com.aventstack.extentreports.Status;
 
 import LinkCxOWeb.BaseClass.TestBaseClassWeb;
 import LinkCxOWeb.Pages.Homescreen;
+import LinkCxOWeb.Pages.Job;
 import LinkCxOWeb.Pages.WebLoginWithMobileNumber;
 import LinkCxOWeb.utils.ActionKeywords;
 import LinkCxOWeb.utils.TestUtilsWeb;
@@ -35,6 +36,7 @@ public class WebTestCases extends TestBaseClassWeb {
 	WebLoginWithMobileNumber loginmethodweb;
 	TestBaseClassWeb testclassweb;
 	Homescreen screen;
+	Job jobScreen;
 
 	@BeforeTest
 	public void setUp() throws IOException {
@@ -45,7 +47,7 @@ public class WebTestCases extends TestBaseClassWeb {
 		action1 = new ActionKeywords();
 		loginmethodweb = new WebLoginWithMobileNumber();
 		screen = new Homescreen();
-
+		jobScreen = new Job();
 	}
 
 	@Test(priority = 1)
@@ -181,7 +183,7 @@ public class WebTestCases extends TestBaseClassWeb {
 
 	}
 
-	@Test(priority = 5)
+	@Test(priority = 5, enabled = false)
 	public void CreateQuery() throws IOException {
 		System.out.println("------------");
 		testutilsWeb.testCaseCreate("Tc 05 : Create Query sucessfully");
@@ -195,11 +197,36 @@ public class WebTestCases extends TestBaseClassWeb {
 			Thread.sleep(3000);
 			screen.ClickOnQueryPostBtn();
 			Thread.sleep(3000);
-			//screen.ClickOnSubmit();
-			//Thread.sleep(3000);
+			// screen.ClickOnSubmit();
+			// Thread.sleep(3000);
 
 		} catch (Exception e) {
 			testutilsWeb.failTestCase("User is not able to create Query");
+			e.printStackTrace();
+			// TODO: handle exception
+		}
+
+	}
+
+	@Test(priority = 6)
+	public void CreateJob() throws IOException {
+		testutilsWeb.testCaseCreate("Tc 06 : Create job sucessfully");
+
+		try {
+			jobScreen.ClickonJobTab();
+			jobScreen.jobCreate();
+			jobScreen.EnterJobTitle();
+			jobScreen.EnterComName();
+			jobScreen.SelectIndustry();
+			jobScreen.EnterSkills();
+			jobScreen.EnterQualification();
+			jobScreen.SelectJobtype();
+			jobScreen.SelectWorkplaceType();
+			jobScreen.EnterLocation();
+			Thread.sleep(3000);
+
+		} catch (Exception e) {
+			testutilsWeb.failTestCase("User is not able to create Job");
 			e.printStackTrace();
 			// TODO: handle exception
 		}

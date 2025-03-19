@@ -17,7 +17,7 @@ public class Homescreen extends TestBaseClassWeb {
 
 	@FindBy(xpath = "//div[@class=\"flex bg-golden w-10 h-10 items-center justify-center rounded-full\"]")
 	private WebElement ClickPlusBtn;
-
+	
 	public void ClickonPlusButton() {
 		action.clickElement(ClickPlusBtn);
 	}
