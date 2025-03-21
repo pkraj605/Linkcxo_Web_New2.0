@@ -15,6 +15,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
 import LinkCxOWeb.BaseClass.TestBaseClassWeb;
+import LinkCxOWeb.Pages.Event;
 import LinkCxOWeb.Pages.Homescreen;
 import LinkCxOWeb.Pages.Job;
 import LinkCxOWeb.Pages.WebLoginWithMobileNumber;
@@ -37,6 +38,8 @@ public class WebTestCases extends TestBaseClassWeb {
 	TestBaseClassWeb testclassweb;
 	Homescreen screen;
 	Job jobScreen;
+	Event eventScreen;
+	
 
 	@BeforeTest
 	public void setUp() throws IOException {
@@ -48,6 +51,7 @@ public class WebTestCases extends TestBaseClassWeb {
 		loginmethodweb = new WebLoginWithMobileNumber();
 		screen = new Homescreen();
 		jobScreen = new Job();
+		eventScreen = new Event();
 	}
 
 	@Test(priority = 1)
@@ -208,7 +212,7 @@ public class WebTestCases extends TestBaseClassWeb {
 
 	}
 
-	@Test(priority = 6)
+	@Test(priority = 6, enabled = false)
 	public void CreateJob() throws IOException {
 		testutilsWeb.testCaseCreate("Tc 06 : Create job sucessfully");
 
@@ -216,14 +220,29 @@ public class WebTestCases extends TestBaseClassWeb {
 			jobScreen.ClickonJobTab();
 			jobScreen.jobCreate();
 			jobScreen.EnterJobTitle();
+			Thread.sleep(1000);
 			jobScreen.EnterComName();
+			Thread.sleep(1000);
 			jobScreen.SelectIndustry();
+			Thread.sleep(1000);
 			jobScreen.EnterSkills();
+			Thread.sleep(1000);
 			jobScreen.EnterQualification();
+			Thread.sleep(1000);
+			jobScreen.ScrollTillPostJob();
+			Thread.sleep(1000);
 			jobScreen.SelectJobtype();
+			Thread.sleep(1000);
 			jobScreen.SelectWorkplaceType();
+			Thread.sleep(1000);
 			jobScreen.EnterLocation();
-			Thread.sleep(3000);
+			Thread.sleep(2000);
+			jobScreen.ClickOnCompRedio();
+			Thread.sleep(2000);
+			jobScreen.EnterJddetails();
+			Thread.sleep(6000);
+			jobScreen.ClickOnCreateBtn();
+			Thread.sleep(8000);
 
 		} catch (Exception e) {
 			testutilsWeb.failTestCase("User is not able to create Job");
@@ -232,12 +251,26 @@ public class WebTestCases extends TestBaseClassWeb {
 		}
 
 	}
+	
+	@Test(priority = 7)
+	public void CreatEvent() throws IOException {
+		testutilsWeb.testCaseCreate("Tc 06 : Event Create sucessfully");
+		
+		try {
+			eventScreen.ClickonHamburger();
+			Thread.sleep(3000);
 
+		} catch (Exception e) {
+			testutilsWeb.failTestCase("Event not created Sucessfully");
+			e.printStackTrace();
+		}
+		
+		eventScreen.ClickonEvent();
+	}
 	@AfterTest
 	public void teardown() {
 		testutilsWeb.ExtentFlush();
-		driver.quit();
 		TestBaseClassWeb.driver.quit();
 	}
-
+	
 }

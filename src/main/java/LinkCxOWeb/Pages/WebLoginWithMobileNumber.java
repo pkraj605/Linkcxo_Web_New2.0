@@ -34,7 +34,7 @@ public class WebLoginWithMobileNumber extends TestBaseClassWeb {
 	private WebElement EnterPHoneNumber;
 
 	public void EnterMobileNumber() {
-		action.sendKeysElement(EnterPHoneNumber, "6206098368");
+		action.sendKeysElement(EnterPHoneNumber, "9162849798");
 	}
 
 	@FindBy(xpath = "//button[text()=\"Continue\"]")
@@ -64,15 +64,15 @@ public class WebLoginWithMobileNumber extends TestBaseClassWeb {
 
 	public void EnterOTP() throws InterruptedException {
 		action.sendKeysElement(Enterotp1, "4");
-		Thread.sleep(1000);
+		
 		action.sendKeysElement(Enterotp2, "4");
-		Thread.sleep(1000);
+		
 		action.sendKeysElement(Enterotp3, "4");
-		Thread.sleep(1000);
+		
 		action.sendKeysElement(Enterotp4, "4");
-		Thread.sleep(1000);
+		
 		action.sendKeysElement(Enterotp5, "4");
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
 		action.sendKeysElement(Enterotp6, "4");
 		Thread.sleep(1000);	
 	
@@ -83,5 +83,6 @@ public class WebLoginWithMobileNumber extends TestBaseClassWeb {
 
 	public boolean verifyUserIsAbletoLogin() {
 		return action.isDisplay(verifylogin);
+		
 	}
 }
