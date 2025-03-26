@@ -258,7 +258,17 @@ public class WebTestCases extends TestBaseClassWeb {
 		
 		try {
 			eventScreen.ClickonHamburger();
-			Thread.sleep(3000);
+			Thread.sleep(2000);
+			eventScreen.ClickonEvent();
+			Thread.sleep(2000);
+			eventScreen.ClickonEventCreate();
+			Thread.sleep(2000);
+			eventScreen.UploadEventImage();
+			Thread.sleep(2000);
+			eventScreen.EnterEventTitle();
+			Thread.sleep(2000);
+		
+			
 
 		} catch (Exception e) {
 			testutilsWeb.failTestCase("Event not created Sucessfully");
@@ -266,6 +276,7 @@ public class WebTestCases extends TestBaseClassWeb {
 		}
 		
 		eventScreen.ClickonEvent();
+		
 	}
 	@AfterTest
 	public void teardown() {
