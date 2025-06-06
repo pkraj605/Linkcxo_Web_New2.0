@@ -1,5 +1,7 @@
 package LinkCxOWeb.Pages;
 
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -44,38 +46,49 @@ public class WebLoginWithMobileNumber extends TestBaseClassWeb {
 		action.clickElement(ContinueBtn);
 	}
 
-	@FindBy(xpath = "//input[@name='otp-input-0']")
-	private WebElement Enterotp1;
+//	@FindBy(xpath = "//input[@name='otp-input-0']")
+//	private WebElement Enterotp1;
+//
+//	@FindBy(xpath = "//input[@name='otp-input-1']")
+//	private WebElement Enterotp2;
+//
+//	@FindBy(xpath = "//input[@name='otp-input-2']")
+//	private WebElement Enterotp3;
+//
+//	@FindBy(xpath = "//input[@name='otp-input-3']")
+//	private WebElement Enterotp4;
+//
+//	@FindBy(xpath = "//input[@name='otp-input-4']")
+//	private WebElement Enterotp5;
+//
+//	@FindBy(xpath = "//input[@name='otp-input-5']")
+//	private WebElement Enterotp6;
+//
+//	public void EnterOTP() throws InterruptedException {
+//		action.sendKeysElement(Enterotp1, "4");
+//		
+//		action.sendKeysElement(Enterotp2, "4");
+//		
+//		action.sendKeysElement(Enterotp3, "4");
+//		
+//		action.sendKeysElement(Enterotp4, "4");
+//		
+//		action.sendKeysElement(Enterotp5, "4");
+//		//Thread.sleep(1000);
+//		action.sendKeysElement(Enterotp6, "4");
+//		Thread.sleep(1000);	
+//	
+//	}
 
-	@FindBy(xpath = "//input[@name='otp-input-1']")
-	private WebElement Enterotp2;
-
-	@FindBy(xpath = "//input[@name='otp-input-2']")
-	private WebElement Enterotp3;
-
-	@FindBy(xpath = "//input[@name='otp-input-3']")
-	private WebElement Enterotp4;
-
-	@FindBy(xpath = "//input[@name='otp-input-4']")
-	private WebElement Enterotp5;
-
-	@FindBy(xpath = "//input[@name='otp-input-5']")
-	private WebElement Enterotp6;
+	
+	@FindBy(xpath = "//input[starts-with(@name, 'otp-input-')]")
+	private List<WebElement> otpInputs;
 
 	public void EnterOTP() throws InterruptedException {
-		action.sendKeysElement(Enterotp1, "4");
-		
-		action.sendKeysElement(Enterotp2, "4");
-		
-		action.sendKeysElement(Enterotp3, "4");
-		
-		action.sendKeysElement(Enterotp4, "4");
-		
-		action.sendKeysElement(Enterotp5, "4");
-		//Thread.sleep(1000);
-		action.sendKeysElement(Enterotp6, "4");
-		Thread.sleep(1000);	
-	
+	    for (WebElement input : otpInputs) {
+	        action.sendKeysElement(input, "4");
+	    }
+	    Thread.sleep(1000); // optional delay
 	}
 
 	@FindBy(xpath = "(//h1[@class=\"text-white text-lg leading-6 font-semibold cursor-pointer\"])")

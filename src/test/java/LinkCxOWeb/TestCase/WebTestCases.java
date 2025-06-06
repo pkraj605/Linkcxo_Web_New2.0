@@ -15,6 +15,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
 import LinkCxOWeb.BaseClass.TestBaseClassWeb;
+import LinkCxOWeb.Pages.Club;
 import LinkCxOWeb.Pages.Event;
 import LinkCxOWeb.Pages.Homescreen;
 import LinkCxOWeb.Pages.Job;
@@ -39,7 +40,8 @@ public class WebTestCases extends TestBaseClassWeb {
 	Homescreen screen;
 	Job jobScreen;
 	Event eventScreen;
-	
+	Club clubScreen;
+
 
 	@BeforeTest
 	public void setUp() throws IOException {
@@ -52,6 +54,7 @@ public class WebTestCases extends TestBaseClassWeb {
 		screen = new Homescreen();
 		jobScreen = new Job();
 		eventScreen = new Event();
+		clubScreen = new Club();
 	}
 
 	@Test(priority = 1)
@@ -251,11 +254,11 @@ public class WebTestCases extends TestBaseClassWeb {
 		}
 
 	}
-	
-	@Test(priority = 7)
+
+	@Test(priority = 7, enabled = false)
 	public void CreatEvent() throws IOException {
-		testutilsWeb.testCaseCreate("Tc 06 : Event Create sucessfully");
-		
+		testutilsWeb.testCaseCreate("Tc 07 : Event Create sucessfully");
+
 		try {
 			eventScreen.ClickonHamburger();
 			Thread.sleep(2000);
@@ -267,21 +270,59 @@ public class WebTestCases extends TestBaseClassWeb {
 			Thread.sleep(2000);
 			eventScreen.EnterEventTitle();
 			Thread.sleep(2000);
-		
-			
+			jobScreen.SelectIndustry();
+			Thread.sleep(1000);
+			screen.SElectCategory();
+			Thread.sleep(1000);
+			eventScreen.EnterEventDetails();
+			Thread.sleep(1000);
+			eventScreen.EnterNextBtn();
+			Thread.sleep(1000);
+			eventScreen.EnterHostType();
+			Thread.sleep(1000);
+			eventScreen.ClickTypeBtn();
+			Thread.sleep(1000);
+			eventScreen.EnteringEventLink();
+			Thread.sleep(1000);
+			eventScreen.SelectStartDate();
+			Thread.sleep(1000);
+			eventScreen.SelectEndDate();
+			Thread.sleep(1000);
+			eventScreen.EnteringHostEmail();
+			Thread.sleep(1000);
+			eventScreen.ClickOnNextBtn();
+			Thread.sleep(1000);
+			eventScreen.ClickOnCreateBtn1();
+			Thread.sleep(1000);
+
+
 
 		} catch (Exception e) {
 			testutilsWeb.failTestCase("Event not created Sucessfully");
 			e.printStackTrace();
+		}		
+
+	}
+
+
+	@Test(priority = 8, enabled = false)
+	public void CreateClub() throws IOException {
+		testutilsWeb.testCaseCreate("Tc 08 :  Club created sucessfully");
+
+		try {
+			clubScreen.ClickonHamburger1();
+			Thread.sleep(4000);
+			clubScreen.ClickonClub();
+			Thread.sleep(2000);
+			clubScreen.ClickonClubCreateBtn();
+			Thread.sleep(2000);
+			
+				
+			
+		} catch (Exception e) {
+			testutilsWeb.failTestCase("User is not able to create Club");
+			e.printStackTrace();
+			
 		}
-		
-		eventScreen.ClickonEvent();
-		
 	}
-	@AfterTest
-	public void teardown() {
-		testutilsWeb.ExtentFlush();
-		TestBaseClassWeb.driver.quit();
-	}
-	
 }

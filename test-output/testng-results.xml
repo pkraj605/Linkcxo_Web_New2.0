@@ -1,64 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="5" total="7" passed="1" failed="1" skipped="0">
+<testng-results ignored="7" total="8" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-26T16:30:27 IST" name="Default suite" finished-at="2025-03-26T16:31:13 IST" duration-ms="45157">
+  <suite started-at="2025-05-29T19:04:09 IST" name="Default suite" finished-at="2025-05-29T19:04:23 IST" duration-ms="13329">
     <groups>
     </groups>
-    <test started-at="2025-03-26T16:30:27 IST" name="Default test" finished-at="2025-03-26T16:31:13 IST" duration-ms="45157">
+    <test started-at="2025-05-29T19:04:09 IST" name="Default test" finished-at="2025-05-29T19:04:23 IST" duration-ms="13329">
       <class name="LinkCxOWeb.TestCase.WebTestCases">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:LinkCxOWeb.TestCase.WebTestCases@d9345cd]" started-at="2025-03-26T16:30:27 IST" name="setUp" finished-at="2025-03-26T16:30:30 IST" duration-ms="2639" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:LinkCxOWeb.TestCase.WebTestCases@59505b48]" started-at="2025-05-29T19:04:09 IST" name="setUp" finished-at="2025-05-29T19:04:14 IST" duration-ms="5223" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="loginviaMobileNumber()[pri:1, instance:LinkCxOWeb.TestCase.WebTestCases@d9345cd]" started-at="2025-03-26T16:30:30 IST" name="loginviaMobileNumber" finished-at="2025-03-26T16:30:41 IST" duration-ms="11428" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginviaMobileNumber -->
-        <test-method signature="CreatEvent()[pri:7, instance:LinkCxOWeb.TestCase.WebTestCases@d9345cd]" started-at="2025-03-26T16:30:41 IST" name="CreatEvent" finished-at="2025-03-26T16:31:12 IST" duration-ms="30504" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method signature="loginviaMobileNumber()[pri:1, instance:LinkCxOWeb.TestCase.WebTestCases@59505b48]" started-at="2025-05-29T19:04:15 IST" name="loginviaMobileNumber" finished-at="2025-05-29T19:04:23 IST" duration-ms="8075" status="FAIL">
+          <exception class="org.openqa.selenium.WebDriverException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//h2[normalize-space()='Events']"}
-  (Session info: chrome=134.0.6998.89)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:64201
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'LX-BLR-LT-009', ip: '192.168.0.148', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59589}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 6ccbcd0dd9277a13a47c69879e4d8d33
-*** Element info: {Using=xpath, value=//h2[normalize-space()='Events']}]]>
+System info: host: 'LX-BLR-LT-009', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: driver.version: RemoteWebDriver]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h2[normalize-space()='Events']"}
-  (Session info: chrome=134.0.6998.89)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[org.openqa.selenium.WebDriverException: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:64201
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'LX-BLR-LT-009', ip: '192.168.0.148', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59589}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 6ccbcd0dd9277a13a47c69879e4d8d33
-*** Element info: {Using=xpath, value=//h2[normalize-space()='Events']}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+System info: host: 'LX-BLR-LT-009', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:92)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy13.click(Unknown Source)
-at LinkCxOWeb.utils.ActionKeywords.clickElement(ActionKeywords.java:48)
-at LinkCxOWeb.Pages.Event.ClickonEvent(Event.java:30)
-at LinkCxOWeb.TestCase.WebTestCases.CreatEvent(WebTestCases.java:278)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
+at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:295)
+at LinkCxOWeb.utils.TestUtilsWeb.takeScreenShot(TestUtilsWeb.java:57)
+at LinkCxOWeb.utils.TestUtilsWeb.failTestCase(TestUtilsWeb.java:116)
+at LinkCxOWeb.TestCase.WebTestCases.loginviaMobileNumber(WebTestCases.java:87)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -87,16 +59,45 @@ at org.testng.TestNG.run(TestNG.java:1031)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:64201
+at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
+at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
+at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
+at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
+at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
+at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
+at okhttp3.RealCall.execute(RealCall.java:77)
+at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:155)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+... 34 more
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+at java.base/java.net.Socket.connect(Socket.java:633)
+at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
+at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
+... 54 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CreatEvent -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:LinkCxOWeb.TestCase.WebTestCases@d9345cd]" started-at="2025-03-26T16:31:12 IST" name="teardown" finished-at="2025-03-26T16:31:13 IST" duration-ms="543" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
+        </test-method> <!-- loginviaMobileNumber -->
       </class> <!-- LinkCxOWeb.TestCase.WebTestCases -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
